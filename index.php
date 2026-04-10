@@ -42,7 +42,7 @@
     </nav>
 
     <section class="page-section clearfix">
-        <div class="container">
+        <div class="container-fluid">
             <?php
             $m = isset($_GET['m']) ? $_GET['m'] : 'home';
             switch ($m) {

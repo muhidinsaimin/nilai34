@@ -16,6 +16,7 @@
                             <th>Tempat Lahir</th>
                             <th>Tanggal Lahir</th>
                             <th>Alamat</th>
+                            <th>Jurusan</th>
                             <th>Foto</th>
                             <th>Aksi</th>
                         </tr>
@@ -23,11 +24,16 @@
                     <tbody>
                         <?php
                         include('config.php');
-                        $sql = "SELECT * FROM students";
+                        $sql = "SELECT majors.id AS mid, majors.major, students.id AS sid, students.nis, students.name, students.gender, students.pob, students.dob, students.address, students.photo FROM students JOIN majors ON majors.id=students.major_id";
                         $result = mysqli_query($con, $sql);
                         if (mysqli_num_rows($result)>0) {
                             $no=1;
                             while ($r=mysqli_fetch_assoc($result)) {
+                                if (isset($r['photo'])) {
+                                    $photo = '<img src="students/photos/'.$r['photo'].'" alt="Siswa" height="100px">';
+                                    } else {
+                                    $photo = '<img src="students/photos/0.png" alt="Siswa" height="100px">';
+                                }
                                 echo '<tr>
                                     <td>'.$no.'</td>
                                     <td>'.$r['nis'].'</td>
@@ -36,10 +42,11 @@
                                     <td>'.$r['pob'].'</td>
                                     <td>'.$r['dob'].'</td>
                                     <td>'.$r['address'].'</td>
-                                    <td>'.$r['photo'].'</td>
+                                    <td>'.$r['major'].'</td>
+                                    <td>'.$photo.'</td>
                                     <td>
-                                        <a href="?m=students&s=edit&id='.$r['id'].'" class="btn btn-warning btn-sm">Edit</a>&nbsp;
-                                        <a href="?m=students&s=delete&id='.$r['id'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin jurusan dihapus?\')">Hapus</a>
+                                        <a href="?m=students&s=edit&id='.$r['sid'].'" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="?m=students&s=delete&id='.$r['sid'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin siswa dihapus?\')">Hapus</a>
                                     </td>
                                 </tr>';
                                 $no++;
