@@ -10,7 +10,7 @@
                     <thead class="table-dark">
                         <tr>
                             <th>No</th>
-                            <th>NIM</th>
+                            <th>NIS</th>
                             <th>Nama Siswa</th>
                             <th>Jenis Kelamin</th>
                             <th>Tempat Lahir</th>
@@ -30,7 +30,7 @@
                             while ($r=mysqli_fetch_assoc($result)) {
                                 echo '<tr>
                                     <td>'.$no.'</td>
-                                    <td>'.$r['nim'].'</td>
+                                    <td>'.$r['nis'].'</td>
                                     <td>'.$r['name'].'</td>
                                     <td>'.$r['gender'].'</td>
                                     <td>'.$r['pob'].'</td>
