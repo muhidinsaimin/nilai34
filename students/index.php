@@ -2,22 +2,22 @@
 $sub = isset($_GET['s']) ? $_GET['s'] : 'view';
 switch ($sub) {
     case 'view': default:
-        include("majors/view.php");
+        include("students/view.php");
         break;
     case 'add':
-        include("majors/add.php");
+        include("students/add.php");
         break;
     case 'save':
-        include("majors/save.php");
+        include("students/save.php");
         break;
     case 'edit':
-        include("majors/edit.php");
+        include("students/edit.php");
         break;
     case 'update':
-        include("majors/update.php");
+        include("students/update.php");
         break;
     case 'delete':
-        include("majors/delete.php");
+        include("students/delete.php");
         break;
 
         /* CRUD  

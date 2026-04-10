@@ -1,5 +1,5 @@
 <div class="intro">
-    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="assets/img/gambar.jpg" alt="..." />
+    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="assets/img/gambar.jpg" alt="Kelas TKJ" />
     <div class="intro-text left-0 text-center bg-faded p-5 rounded">
         <h2 class="section-heading mb-4">
             <span class="section-heading-upper">Muhidin</span>

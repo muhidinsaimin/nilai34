@@ -46,8 +46,7 @@
             <?php
             $m = isset($_GET['m']) ? $_GET['m'] : 'home';
             switch ($m) {
-                case 'home':
-                default:
+                case 'home':default:
                     include("home.php");
                     break;
                 case 'majors':
